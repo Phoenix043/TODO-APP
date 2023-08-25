@@ -14,7 +14,7 @@ const Task = ({ task, index, handleEditTask, handleDeleteTask }) => {
   const handleSaveClick = async () => {
     if (editedTitle.trim() === '') return; // Handle empty title
     try {
-      await axios.put(`http://localhost:8000/todos/${task._id}`, {
+      await axios.put(`https://breezy-momentous-message.glitch.me/todos/${task._id}`, {
         title: editedTitle,
         description: editedDescription,
       });
@@ -27,7 +27,7 @@ const Task = ({ task, index, handleEditTask, handleDeleteTask }) => {
 
   const handleDeleteClick = async () => {
     try {
-      await axios.delete(`http://localhost:8000/todos/${task._id}`);
+      await axios.delete(`https://breezy-momentous-message.glitch.me/todos/${task._id}`);
        handleDeleteTask(task._id); // Notify parent component to update task
     } catch (error) {
       console.error('Error deleting task:', error);

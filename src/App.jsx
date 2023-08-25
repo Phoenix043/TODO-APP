@@ -24,7 +24,7 @@ const App = () => {
   const fetchData = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get('http://localhost:8000/todos');
+      const response = await axios.get('https://breezy-momentous-message.glitch.me/todos');
       const data = response.data;
       setIsLoading(false);
       setTasks(data); // Set all tasks
@@ -51,7 +51,7 @@ const App = () => {
       setIsLoading(true);
       try {
         // Update task status in backend
-        await axios.put(`http://localhost:8000/todo/${taskId}`, { newStatus: destinationStatus });
+        await axios.put(`https://breezy-momentous-message.glitch.me/todo/${taskId}`, { newStatus: destinationStatus });
         setTasks(updatedTasks);
         setIsLoading(false);
       } catch (error) {
